@@ -42,7 +42,7 @@ public class PredatorAndPrey {
     FcmRunner runner;
     CognitiveMap map;
 
-    public PredatorAndPrey() throws ParseException {
+    public PredatorAndPrey() throws Exception {
         map = FcmIO.loadXml(getClass().getResourceAsStream("PredatorAndPrey.xml")).get(0);
         runner = new SimpleFcmRunner(map, 0.1, 1000);
     }
@@ -107,7 +107,7 @@ public class PredatorAndPrey {
         try {
             example = new PredatorAndPrey();
             example.run();
-        } catch (ParseException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

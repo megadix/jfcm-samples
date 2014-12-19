@@ -38,7 +38,7 @@ public class SWDevelopment {
     FcmRunner runner;
     NumberFormat nf;
 
-    public SWDevelopment() throws ParseException {
+    public SWDevelopment() throws Exception {
         nf = NumberFormat.getNumberInstance(Locale.ENGLISH);
         nf.setMaximumFractionDigits(8);
         map = FcmIO.loadXml(getClass().getResourceAsStream("SWDevelopment.xml")).get(0);
@@ -145,7 +145,7 @@ public class SWDevelopment {
         try {
             swd = new SWDevelopment();
             swd.run();
-        } catch (ParseException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

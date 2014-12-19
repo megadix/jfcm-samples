@@ -19,6 +19,8 @@ Temple Place, Suite 330, Boston, MA 02111-1307 USA
 package org.megadix.jfcm.samples;
 
 import org.megadix.jfcm.*;
+import org.megadix.jfcm.act.SignumActivator;
+import org.megadix.jfcm.conn.WeightedConnection;
 
 /**
  * Example inspired by
@@ -34,25 +36,25 @@ public class InvestmentsExample {
 		map = new CognitiveMap("Investments");
 		ConceptActivator af = new SignumActivator();
 
-		Concept c1 = new Concept("Interest rate", af, 0.0, 0.0, 0.0, false);
+		Concept c1 = new Concept("Interest rate", null, af, 0.0, 0.0, false);
 		map.addConcept(c1);
 
-		Concept c2 = new Concept("Productive investments", af, 0.0, 0.0, 0.0, false);
+		Concept c2 = new Concept("Productive investments", null, af, 0.0, 0.0, false);
 		map.addConcept(c2);
 
-		Concept c3 = new Concept("Occupation", af, 0.0, 0.0, 0.0, false);
+		Concept c3 = new Concept("Occupation", null, af, 0.0, 0.0, false);
 		map.addConcept(c3);
 
-		Concept c4 = new Concept("Inflation", af, 0.0, 0.0, 0.0, false);
+		Concept c4 = new Concept("Inflation", null, af, 0.0, 0.0, false);
 		map.addConcept(c4);
 
-		FcmConnection conn_1 = new WeightedConnection("Interest rate -> Productive investments", -0.8);
+		FcmConnection conn_1 = new WeightedConnection("Interest rate -> Productive investments", null, -0.8);
 		map.addConnection(conn_1);
-		FcmConnection conn_2 = new WeightedConnection("Productive investments -> Occupation", 1.0);
+		FcmConnection conn_2 = new WeightedConnection("Productive investments -> Occupation", null, 1.0);
 		map.addConnection(conn_2);
-		FcmConnection conn_3 = new WeightedConnection("Occupation -> Inflation", 0.9);
+		FcmConnection conn_3 = new WeightedConnection("Occupation -> Inflation", null, 0.9);
 		map.addConnection(conn_3);
-		FcmConnection conn_4 = new WeightedConnection("Inflation -> Interest rate", 1.0);
+		FcmConnection conn_4 = new WeightedConnection("Inflation -> Interest rate", null, 1.0);
 		map.addConnection(conn_4);
 
 		map.connect("Interest rate", "Interest rate -> Productive investments", "Productive investments");

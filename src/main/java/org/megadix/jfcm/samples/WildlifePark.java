@@ -42,7 +42,7 @@ public class WildlifePark {
     FcmRunner runner;
     CognitiveMap map;
 
-    public WildlifePark() throws ParseException {
+    public WildlifePark() throws Exception {
         map = FcmIO.loadXml(getClass().getResourceAsStream("WildlifePark.fcm.xml")).get(0);
         runner = new SimpleFcmRunner(map, 0.1, 1000);
     }
@@ -227,7 +227,7 @@ public class WildlifePark {
         try {
             example = new WildlifePark();
             example.run();
-        } catch (ParseException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.0">
+<jfcm:maps xmlns:jfcm="http://www.megadix.org/standards/JFCM-map-v-1.2.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.megadix.org/standards/JFCM-map-v-1.2.xsd http://www.megadix.org/standards/JFCM-map-v-1.2.xsd">
     <map name="Wildlife Park">
         <concepts>
             <concept act="SIGNUM" input="0.0" name="Food" output="0.0" />
@@ -8,17 +10,25 @@
         </concepts>
         <connections>
             <connection from="Food" name="Food - Prey" to="Prey" type="WEIGHTED">
-                <param name="weight" value="0.6" />
+                <params>
+                    <param name="weight" value="0.6" />
+                </params>
             </connection>
             <connection from="Prey" name="Prey - Food" to="Food" type="WEIGHTED">
-                <param name="weight" value="-0.4" />
+                <params>
+                    <param name="weight" value="-0.4" />
+                </params>
             </connection>
             <connection from="Prey" name="Prey - Predators" to="Predators" type="WEIGHTED">
-                <param name="weight" value="0.6" />
+                <params>
+                    <param name="weight" value="0.6" />
+                </params>
             </connection>
             <connection from="Predators" name="Predators - Prey" to="Prey" type="WEIGHTED">
-                <param name="weight" value="-0.4" />
+                <params>
+                    <param name="weight" value="-0.4" />
+                </params>
             </connection>
         </connections>
     </map>
-</maps>
+</jfcm:maps>

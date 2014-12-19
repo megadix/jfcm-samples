@@ -9,6 +9,8 @@ import java.util.*;
 import javax.swing.*;
 
 import org.megadix.jfcm.*;
+import org.megadix.jfcm.act.SignumActivator;
+import org.megadix.jfcm.conn.WeightedConnection;
 
 public class InvestmentsExampleSwing extends JFrame {
 
