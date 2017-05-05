@@ -28,6 +28,9 @@ import org.megadix.jfcm.utils.FcmIO;
 import org.megadix.jfcm.utils.FcmRunner;
 import org.megadix.jfcm.utils.SimpleFcmRunner;
 
+import static org.megadix.jfcm.samples.ExampleUtils.printMapHeader;
+import static org.megadix.jfcm.samples.ExampleUtils.printMapState;
+
 /**
  * FCM applied to software development.
  *
@@ -46,11 +49,8 @@ public class SWDevelopment {
     }
 
     public void run() {
-        System.out.print("Scenario\tConverged");
-        for (Concept c : map.getConcepts().values()) {
-            System.out.print("\t" + c.getName());
-        }
-        System.out.println();
+        System.out.print("Scenario\tConverged\t");
+        printMapHeader(map, "\t");
 
         scenario_1();
         scenario_2();
@@ -133,11 +133,8 @@ public class SWDevelopment {
     }
 
     void showResults(String scenario, boolean converged) {
-        System.out.print(scenario + "\t" + converged);
-        for (Concept c : map.getConcepts().values()) {
-            System.out.print("\t" + nf.format(c.getOutput()));
-        }
-        System.out.println();
+        System.out.print(scenario + "\t" + converged + "\t");
+        printMapState(map, "\t", nf);
     }
 
     public static void main(String[] args) {

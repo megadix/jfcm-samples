@@ -29,6 +29,9 @@ import org.megadix.jfcm.utils.FcmIO;
 import org.megadix.jfcm.utils.FcmRunner;
 import org.megadix.jfcm.utils.SimpleFcmRunner;
 
+import static org.megadix.jfcm.samples.ExampleUtils.printMapHeader;
+import static org.megadix.jfcm.samples.ExampleUtils.printMapState;
+
 /**
  * Modified example inspired by:
  * http://www.ochoadeaspuru.com/fuzcogmap/wildlifepark.php
@@ -41,10 +44,13 @@ public class WildlifePark {
 
     FcmRunner runner;
     CognitiveMap map;
+    NumberFormat nf;
 
     public WildlifePark() throws Exception {
         map = FcmIO.loadXml(getClass().getResourceAsStream("WildlifePark.fcm.xml")).get(0);
         runner = new SimpleFcmRunner(map, 0.1, 1000);
+        nf = NumberFormat.getNumberInstance(Locale.ENGLISH);
+        nf.setMaximumFractionDigits(8);
     }
 
     /**
@@ -181,11 +187,8 @@ public class WildlifePark {
 
     public void run() {
         try {
-            System.out.print("Scenario\tConverged");
-            for (Concept c : map.getConcepts().values()) {
-                System.out.print("\t" + c.getName());
-            }
-            System.out.println();
+            System.out.print("Scenario\tConverged\t");
+            printMapHeader(map, "\t");
 
             test_scenario_1();
             test_scenario_2();
@@ -211,15 +214,8 @@ public class WildlifePark {
     }
 
     void showResults(String scenario, boolean converged) {
-        NumberFormat nf = NumberFormat.getNumberInstance(Locale.ENGLISH);
-        nf.setMaximumFractionDigits(8);
-        System.out.print(scenario + "\t" + converged);
-
-        for (Concept c : map.getConcepts().values()) {
-            System.out.print("\t");
-            System.out.print(c.getOutput() != null ? nf.format(c.getOutput()) : "");
-        }
-        System.out.println();
+        System.out.print(scenario + "\t" + converged + "\t");
+        printMapState(map, "\t", nf);
     }
 
     public static void main(String[] args) {
