@@ -1,86 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.0">
+<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.2">
     <map name="Software Development">
         <concepts>
-            <concept act="TANH" name="c1" />
-            <concept act="TANH" name="c2" />
-            <concept act="TANH" name="c3" />
-            <concept act="TANH" name="c4" />
-            <concept act="TANH" name="c5" />
-            <concept act="TANH" name="c6" />
-            <concept act="TANH" name="c7" />
-            <concept act="TANH" name="c8" />
-            <concept act="TANH" name="c9" />
+            <concept act="TANH" name="c1"/>
+            <concept act="TANH" name="c2"/>
+            <concept act="TANH" name="c3"/>
+            <concept act="TANH" name="c4"/>
+            <concept act="TANH" name="c5"/>
+            <concept act="TANH" name="c6"/>
+            <concept act="TANH" name="c7"/>
+            <concept act="TANH" name="c8"/>
+            <concept act="TANH" name="c9"/>
         </concepts>
         <connections>
             <connection from="c1" name="c1_c2" to="c2" type="WEIGHTED">
-                <param name="weight" value="-0.4" />
+                <params>
+                    <param name="weight" value="-0.4"/>
+                </params>
             </connection>
             <connection from="c1" name="c1_c3" to="c3" type="WEIGHTED">
-                <param name="weight" value="-0.8" />
+                <params>
+                    <param name="weight" value="-0.8"/>
+                </params>
             </connection>
             <connection from="c2" name="c2_c3" to="c3" type="WEIGHTED">
-                <param name="weight" value="0.6" />
+                <params>
+                    <param name="weight" value="0.6"/>
+                </params>
             </connection>
             <connection from="c3" name="c3_c2" to="c2" type="WEIGHTED">
-                <param name="weight" value="0.2" />
+                <params>
+                    <param name="weight" value="0.2"/>
+                </params>
             </connection>
             <connection from="c3" name="c3_c4" to="c4" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="c3" name="c3_c6" to="c6" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="c4" name="c4_c5" to="c5" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="c5" name="c5_c3" to="c3" type="WEIGHTED">
-                <param name="weight" value="0.5" />
+                <params>
+                    <param name="weight" value="0.5"/>
+                </params>
             </connection>
             <connection from="c5" name="c5_c7" to="c7" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="c6" name="c6_c2" to="c2" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="c6" name="c6_c5" to="c5" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="c6" name="c6_c7" to="c7" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="c7" name="c7_c1" to="c1" type="WEIGHTED">
-                <param name="weight" value="0.5" />
+                <params>
+                    <param name="weight" value="0.5"/>
+                </params>
             </connection>
             <connection from="c7" name="c7_c2" to="c2" type="WEIGHTED">
-                <param name="weight" value="0.5" />
+                <params>
+                    <param name="weight" value="0.5"/>
+                </params>
             </connection>
             <connection from="c7" name="c7_c8" to="c8" type="WEIGHTED">
-                <param name="weight" value="0.5" />
+                <params>
+                    <param name="weight" value="0.5"/>
+                </params>
             </connection>
             <connection from="c7" name="c7_c9" to="c9" type="WEIGHTED">
-                <param name="weight" value="0.7" />
+                <params>
+                    <param name="weight" value="0.7"/>
+                </params>
             </connection>
             <connection from="c8" name="c8_c1" to="c1" type="WEIGHTED">
-                <param name="weight" value="-0.6" />
+                <params>
+                    <param name="weight" value="-0.6"/>
+                </params>
             </connection>
             <connection from="c8" name="c8_c7" to="c7" type="WEIGHTED">
-                <param name="weight" value="-0.2" />
+                <params>
+                    <param name="weight" value="-0.2"/>
+                </params>
             </connection>
             <connection from="c9" name="c9_c2" to="c2" type="WEIGHTED">
-                <param name="weight" value="0.5" />
+                <params>
+                    <param name="weight" value="0.5"/>
+                </params>
             </connection>
             <connection from="c9" name="c9_c3" to="c3" type="WEIGHTED">
-                <param name="weight" value="0.9" />
+                <params>
+                    <param name="weight" value="0.9"/>
+                </params>
             </connection>
             <connection from="c9" name="c9_c4" to="c4" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="c9" name="c9_c6" to="c6" type="WEIGHTED">
-                <param name="weight" value="-0.8" />
+                <params>
+                    <param name="weight" value="-0.8"/>
+                </params>
             </connection>
             <connection from="c9" name="c9_c8" to="c8" type="WEIGHTED">
-                <param name="weight" value="0.7" />
+                <params>
+                    <param name="weight" value="0.7"/>
+                </params>
             </connection>
         </connections>
     </map>

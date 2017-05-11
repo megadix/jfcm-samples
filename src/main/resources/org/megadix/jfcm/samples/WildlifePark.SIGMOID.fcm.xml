@@ -1,60 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.0">
+<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.2">
     <map name="Wildlife Park">
         <concepts>
-            <concept act="SIGMOID" input="0.0" name="Black market price" output="0.0" />
-            <concept act="SIGMOID" input="0.0" name="Erbivores" output="0.0" />
-            <concept act="SIGMOID" input="0.0" name="Grassland" output="0.0" />
-            <concept act="SIGMOID" input="0.0" name="Poachers" output="0.0" />
-            <concept act="SIGMOID" input="0.0" name="Predators" output="0.0" />
-            <concept act="SIGMOID" input="0.0" name="Rain" output="0.0" />
-            <concept act="SIGMOID" input="0.0" name="Rangers" output="0.0" />
+            <concept act="SIGMOID" input="0.0" name="Black market price" output="0.0"/>
+            <concept act="SIGMOID" input="0.0" name="Erbivores" output="0.0"/>
+            <concept act="SIGMOID" input="0.0" name="Grassland" output="0.0"/>
+            <concept act="SIGMOID" input="0.0" name="Poachers" output="0.0"/>
+            <concept act="SIGMOID" input="0.0" name="Predators" output="0.0"/>
+            <concept act="SIGMOID" input="0.0" name="Rain" output="0.0"/>
+            <concept act="SIGMOID" input="0.0" name="Rangers" output="0.0"/>
         </concepts>
         <connections>
             <connection from="Black market price" name="Black market price - Poachers" to="Poachers" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="Erbivores" name="Erbivores - Black market price" to="Black market price" type="WEIGHTED">
-                <param name="weight" value="-0.2" />
+                <params>
+                    <param name="weight" value="-0.2"/>
+                </params>
             </connection>
             <connection from="Erbivores" name="Erbivores - Grassland" to="Grassland" type="WEIGHTED">
-                <param name="weight" value="-0.6" />
+                <params>
+                    <param name="weight" value="-0.6"/>
+                </params>
             </connection>
             <connection from="Erbivores" name="Erbivores - Poachers" to="Poachers" type="WEIGHTED">
-                <param name="weight" value="0.3" />
+                <params>
+                    <param name="weight" value="0.3"/>
+                </params>
             </connection>
             <connection from="Erbivores" name="Erbivores - Predators" to="Predators" type="WEIGHTED">
-                <param name="weight" value="0.6" />
+                <params>
+                    <param name="weight" value="0.6"/>
+                </params>
             </connection>
             <connection from="Grassland" name="Grassland - Erbivores" to="Erbivores" type="WEIGHTED">
-                <param name="weight" value="0.8" />
+                <params>
+                    <param name="weight" value="0.8"/>
+                </params>
             </connection>
             <connection from="Poachers" name="Poachers - Black market price" to="Black market price" type="WEIGHTED">
-                <param name="weight" value="-0.5" />
+                <params>
+                    <param name="weight" value="-0.5"/>
+                </params>
             </connection>
             <connection from="Poachers" name="Poachers - Erbivores" to="Erbivores" type="WEIGHTED">
-                <param name="weight" value="-0.8" />
+                <params>
+                    <param name="weight" value="-0.8"/>
+                </params>
             </connection>
             <connection from="Poachers" name="Poachers - Predators" to="Predators" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="Predators" name="Predators - Black market price" to="Black market price" type="WEIGHTED">
-                <param name="weight" value="-0.4" />
+                <params>
+                    <param name="weight" value="-0.4"/>
+                </params>
             </connection>
             <connection from="Predators" name="Predators - Erbivores" to="Erbivores" type="WEIGHTED">
-                <param name="weight" value="-0.6" />
+                <params>
+                    <param name="weight" value="-0.6"/>
+                </params>
             </connection>
             <connection from="Predators" name="Predators - Poachers" to="Poachers" type="WEIGHTED">
-                <param name="weight" value="0.7" />
+                <params>
+                    <param name="weight" value="0.7"/>
+                </params>
             </connection>
             <connection from="Rain" name="Rain - Grassland" to="Grassland" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="Rangers" name="Rangers - Black market price" to="Black market price" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="Rangers" name="Rangers - Poachers" to="Poachers" type="WEIGHTED">
-                <param name="weight" value="-0.3" />
+                <params>
+                    <param name="weight" value="-0.3"/>
+                </params>
             </connection>
         </connections>
     </map>

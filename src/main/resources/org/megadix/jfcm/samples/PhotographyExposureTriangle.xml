@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.0">
+<maps xmlns="http://www.megadix.org/standards/JFCM-map-v-1.2">
     <map name="Exposure Triangle">
         <concepts>
             <!-- Camera controls -->
-            <concept act="SIGNUM" name="iso" />
+            <concept act="SIGNUM" name="iso"/>
             <concept act="SIGNUM" name="shutter_speed">
-              <description>Measured in 1/Nth of seconds</description>
+                <description>Measured in 1/Nth of seconds</description>
             </concept>
             <concept act="SIGNUM" name="aperture">
-              <description>Measured in f stops</description>
+                <description>Measured in f stops</description>
             </concept>
             <!-- Effect -->
-            <concept act="SIGNUM" name="blur" />
-            <concept act="SIGNUM" name="depth_of_field" />
-            <concept act="SIGNUM" name="grain" />
+            <concept act="SIGNUM" name="blur"/>
+            <concept act="SIGNUM" name="depth_of_field"/>
+            <concept act="SIGNUM" name="grain"/>
         </concepts>
         <connections>
             <connection from="iso" name="iso_grain" to="grain" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="iso" name="iso_blur" to="blur" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="shutter_speed" name="shutter_speed_blur" to="blur" type="WEIGHTED">
-                <param name="weight" value="-1.0" />
+                <params>
+                    <param name="weight" value="-1.0"/>
+                </params>
             </connection>
             <connection from="aperture" name="aperture_depth_of_field" to="depth_of_field" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
             <connection from="aperture" name="aperture_blur" to="blur" type="WEIGHTED">
-                <param name="weight" value="1.0" />
+                <params>
+                    <param name="weight" value="1.0"/>
+                </params>
             </connection>
         </connections>
     </map>
